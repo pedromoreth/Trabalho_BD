@@ -1,0 +1,39 @@
+<a href="/">Voltar</a>
+<div class="profissao-container">
+<p></p>
+</div>
+<div class="profissao-container">
+  <h1>{{user.name}}</h1>
+  <div class="profissao-list">
+      <div>
+        <h3>Profissão-{{user.occupation}}.</h3>
+      </div>
+  </div>
+</div>
+
+<div class="address-container">
+  <form action="/address/create" method="POST">
+    <input type="hidden" name="UserId" value="{{user.id}}">
+  <div class="address-list">
+    <h2>Lista de endereços:</h2>
+    {{#each user.Addresses}}
+      <div>
+        #{{this.street}} -
+        {{this.number}} -
+        {{this.city}}
+      </div>
+    {{/each}}
+  </div>
+</div>
+<div class="pedidos-container">
+  <div class="address-list">
+    <h2>Lista de Pedidos:</h2>
+    {{#each user.Pedidos}}
+      <div>
+        # Número do pedido - {{this.idpedido}} -
+        Valor do pedido R${{this.Valor}}
+        </form>
+      </div>
+    {{/each}}
+  </div>
+</div>
